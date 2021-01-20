@@ -36,8 +36,9 @@ cacheSolve <- function(x, ...) {
                         message('getting cached inverse matrix')
                         return(inv_calc)
                 }
-                inv_calc <- solve(x$get())
+                inv_calc <- solve(x$get(), ...)
                 x$setinverse(inv_calc)
+                inv_calc
         }
         else{
                 message('matrix is singular')
